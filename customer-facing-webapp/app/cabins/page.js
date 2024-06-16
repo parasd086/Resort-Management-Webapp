@@ -1,10 +1,11 @@
-import Counter from "../components/counter";
+export const metadata = {
+  title: "Cabins",
+};
 
 export default function Page() {
   return (
     <div>
       <h1>Cabins Page</h1>
-      <Counter />
     </div>
   );
 }
