@@ -11,7 +11,7 @@ export function useLogin() {
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
       // After successfull log-in the data(user) just have been setup/downloaded and "getCurrentUser" from apiAuth isn't required to run yet again for re-verification. So, we manually add this query so instead of fetching currentUser from DB it uses cache.
-      queryClient.setQueriesData(["user"], user);
+      queryClient.setQueryData(["user"], user.user);
       navigate("/dashboard", { replace: true });
     },
     onError: (err) => {
