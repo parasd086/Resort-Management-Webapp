@@ -8,7 +8,7 @@ function Logo() {
       {/* The image comp. want us to prevent layout shift therefore height and width are compulsory */}
       {/* <Image src="/logo.png" height="60" width="60" alt="The Wild Oasis logo" /> */}
 
-      {/* Dynamic Image Import(without the src attribute)-> import logo from 'public/logo.png'; and <Image src={logo} alt="Logo" /> -
+      {/* Dynamic Image Import(without directly specifying source in src"-> import logo from 'public/logo.png'; and <Image src={logo} alt="Logo" /> -
       This method allows Next.js to analyze the image first and automatically handle
       dimensions. */}
       <Image
