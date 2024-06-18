@@ -19,7 +19,7 @@ function UpdatePasswordForm() {
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <FormRow
-        label="Password (min 8 characters)"
+        label="New Password (min 8 chars)"
         error={errors?.password?.message}
       >
         <Input
@@ -54,6 +54,7 @@ function UpdatePasswordForm() {
         />
       </FormRow>
       <FormRow>
+        {/* onClick={reset} will call reset function thats the part of react-hook-form  */}
         <Button onClick={reset} type="reset" variation="secondary">
           Cancel
         </Button>
