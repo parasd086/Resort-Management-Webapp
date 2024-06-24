@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import CabinList from "../_components/CabinList";
 import Spinner from "../_components/Spinner";
 import Filter from "../_components/Filter";
+import ReservationReminder from "../_components/ReservationReminder";
 
 export const revalidate = 3600;
 
@@ -32,6 +33,7 @@ export default function Page({ searchParams }) {
       {/*Fallback will NOT be shown again if the Suspense trigger is wrapped in a transition (startTransition). In Next.js, that’s the case with page navigations. We can reset the Suspense boundary with a unique key prop */}
       <Suspense fallback={<Spinner />} key={filter}>
         <CabinList filter={filter} />
+        <ReservationReminder />
       </Suspense>
     </div>
   );
