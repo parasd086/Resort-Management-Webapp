@@ -1,5 +1,5 @@
 "use client";
-import { deleteReservation } from "../_lib/actions";
+import { deleteBooking } from "../_lib/actions";
 // We made this ReservationList client component cuz of optimistic UI
 import ReservationCard from "./ReservationCard";
 import { useOptimistic } from "react";
@@ -14,7 +14,7 @@ function ReservationList({ bookings }) {
 
   async function handleDelete(bookingId) {
     optimisticDelete(bookingId);
-    await deleteReservation(bookingId);
+    await deleteBooking(bookingId);
   }
 
   return (
