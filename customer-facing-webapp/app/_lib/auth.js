@@ -35,7 +35,8 @@ const authConfig = {
     },
     //and it runs after the sign in callback,  and also each time that the session is checked out.
     //And so, here, we actually get access to the session,  and so this is the perfect place  to add the guest ID to that session.
-    async session() {
+    // Here, we want to add "guestId" from supabase guest table to be available in the "session" object in the app.
+    async session({ session, user }) {
       const guest = await getGuest(session.user.email);
       session.user.guestId = guest.id;
       //And then we need to return a session here,  otherwise, the whole thing will be broken.  Then we get no more session once we call off.
