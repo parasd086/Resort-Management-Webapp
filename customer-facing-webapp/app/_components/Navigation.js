@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "../_lib/auth";
 
 export default async function Navigation() {
+  //via auth we can retrieve the current session
   const session = await auth();
 
   return (
